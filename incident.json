@@ -1,0 +1,160 @@
+{
+    "alerts": [
+        {
+            "alertId": "ALT1000-0",
+            "category": "Malware",
+            "computerDnsName": "WORKSTATION-11.contoso.com",
+            "detectionSource": "Microsoft Defender for Identity",
+            "entities": {
+                "domains": [
+                    "evil-download.org",
+                    "suspicious-link.co"
+                ],
+                "emails": [
+                    "admin@fabrikam.com"
+                ],
+                "fileHashes": [
+                    "5d41402abc4b2a76b9719d911017c592"
+                ],
+                "ips": [
+                    "185.220.100.240",
+                    "13.107.42.14"
+                ],
+                "processes": [
+                    "powershell.exe"
+                ]
+            },
+            "firstActivity": "2026-03-08T08:05:11.385954+00:00",
+            "lastActivity": "2026-03-08T22:51:11.385954+00:00",
+            "machineId": "machine-76",
+            "severity": "Critical",
+            "title": "Lateral movement detected"
+        },
+        {
+            "alertId": "ALT1000-1",
+            "category": "Malware",
+            "computerDnsName": "WORKSTATION-19.contoso.com",
+            "detectionSource": "Microsoft Defender for Office 365",
+            "entities": {
+                "domains": [
+                    "phishing-site.net",
+                    "trojan-host.biz"
+                ],
+                "emails": [
+                    "john.doe@company.com"
+                ],
+                "fileHashes": [
+                    "5d41402abc4b2a76b9719d911017c592"
+                ],
+                "ips": [
+                    "192.168.1.100",
+                    "91.189.88.142",
+                    "172.16.5.23"
+                ],
+                "processes": [
+                    "powershell.exe"
+                ]
+            },
+            "firstActivity": "2026-03-08T08:04:11.385954+00:00",
+            "lastActivity": "2026-03-09T07:51:11.385954+00:00",
+            "machineId": "machine-100",
+            "severity": "Medium",
+            "title": "Command and control communication"
+        },
+        {
+            "alertId": "ALT1000-2",
+            "category": "Exfiltration",
+            "computerDnsName": "WORKSTATION-35.contoso.com",
+            "detectionSource": "Microsoft Defender for Endpoint",
+            "entities": {
+                "domains": [
+                    "trojan-host.biz",
+                    "phishing-site.net"
+                ],
+                "emails": [
+                    "noreply@phishing.net",
+                    "suspicious@external.com"
+                ],
+                "fileHashes": [
+                    "7d865e959b2466918c9863afca942d0fb89d7c9ac0c99bafc3749504ded97730"
+                ],
+                "ips": [
+                    "13.107.42.14"
+                ],
+                "processes": [
+                    "powershell.exe"
+                ]
+            },
+            "firstActivity": "2026-03-08T07:56:11.385954+00:00",
+            "lastActivity": "2026-03-08T14:51:11.385954+00:00",
+            "machineId": "machine-12",
+            "severity": "Low",
+            "title": "Command and control communication"
+        },
+        {
+            "alertId": "ALT1000-3",
+            "category": "Exfiltration",
+            "computerDnsName": "WORKSTATION-33.contoso.com",
+            "detectionSource": "Microsoft Defender for Identity",
+            "entities": {
+                "domains": [
+                    "malicious-domain.com"
+                ],
+                "emails": [
+                    "admin@fabrikam.com",
+                    "john.doe@company.com"
+                ],
+                "fileHashes": [
+                    "7d865e959b2466918c9863afca942d0fb89d7c9ac0c99bafc3749504ded97730",
+                    "d41d8cd98f00b204e9800998ecf8427e"
+                ],
+                "ips": [
+                    "10.0.0.15",
+                    "192.168.1.100",
+                    "172.16.5.23"
+                ],
+                "processes": [
+                    "powershell.exe"
+                ]
+            },
+            "firstActivity": "2026-03-08T08:42:11.385954+00:00",
+            "lastActivity": "2026-03-08T13:51:11.385954+00:00",
+            "machineId": "machine-34",
+            "severity": "Low",
+            "title": "Suspicious PowerShell execution detected"
+        }
+    ],
+    "assignedTo": null,
+    "classification": "FalsePositive",
+    "comments": [
+        {
+            "comment": "Initial analysis shows indicators consistent with APT28 TTPs",
+            "createdBy": "analyst@contoso.com",
+            "createdTime": "2026-03-08T08:51:11.385954+00:00"
+        }
+    ],
+    "createdTime": "2026-03-08T07:51:11.385954+00:00",
+    "determination": "Malware",
+    "impactedEntities": {
+        "machines": 1,
+        "mailboxes": 3,
+        "users": 9
+    },
+    "incidentId": "INC1000",
+    "incidentName": "APT28 - Lateral Movement",
+    "lastUpdateTime": "2026-03-09T02:51:11.385954+00:00",
+    "mitreTechniques": [
+        "T1083",
+        "T1204.002",
+        "T1049",
+        "T1082"
+    ],
+    "severity": "Low",
+    "status": "Resolved",
+    "summary": "Security incident involving APT28 with 4 alerts. Investigation shows Cobalt Strike malware deployment with potential data exfiltration.",
+    "tags": [
+        "APT28",
+        "Cobalt Strike"
+    ],
+    "threatFamily": "Cobalt Strike"
+}
