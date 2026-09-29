@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import csv
 
 try:
     with open("incident.json", "r") as f:
@@ -29,7 +30,7 @@ try:
 
         df = pd.DataFrame(rows)
         df = df.explode(entity_field, ignore_index=True)
-        df.to_csv(output_file, index=False)
+        df.to_csv(output_file, index=False, quoting=csv.QUOTE_ALL)
         print(f"{output_file}")
 except FileNotFoundError:
     print("Error: incident.json file not found.")
